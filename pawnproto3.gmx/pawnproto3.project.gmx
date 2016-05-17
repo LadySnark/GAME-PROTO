@@ -54,6 +54,12 @@
     <sprite>sprites\spr_ghost</sprite>
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_house</sprite>
+    <sprite>sprites\spr_test_sr</sprite>
+    <sprite>sprites\spr_test_sl</sprite>
+    <sprite>sprites\spr_test_rr</sprite>
+    <sprite>sprites\spr_test_rl</sprite>
+    <sprite>sprites\spr_test_trans_r</sprite>
+    <sprite>sprites\spr_test_trans_l</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
