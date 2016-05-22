@@ -117,7 +117,7 @@
             <kind>1</kind>
             <string>if mouse_check_button_pressed(mb_left)
 {
-    room_goto(4);
+    room_goto(3);
 }
 </string>
           </argument>
