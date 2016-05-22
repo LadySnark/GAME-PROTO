@@ -56,8 +56,8 @@
     <instance objName="obj_load_game" x="288" y="256" name="inst_7B9EAC14" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_options" x="288" y="320" name="inst_A336CEE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_exit" x="288" y="384" name="inst_35457363" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cursor" x="64" y="384" name="inst_6824040B" locked="0" code="" scaleX="0.680000007152557" scaleY="0.569999992847443" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bgmusic" x="32" y="256" name="inst_372EE2E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bgmusic" x="352" y="256" name="inst_372EE2E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cursor" x="64" y="64" name="inst_EBCE040A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
