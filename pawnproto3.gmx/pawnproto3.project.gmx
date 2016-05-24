@@ -19,7 +19,9 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts"/>
+  <scripts name="scripts">
+    <script>scripts\scrpt_prologue_text.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font_sister_talk</font>
     <font>fonts\font_1</font>
@@ -35,6 +37,9 @@
       <object>objects\obj_options</object>
       <object>objects\obj_exit</object>
       <object>objects\obj_cursor</object>
+    </objects>
+    <objects name="Text">
+      <object>objects\obj_prologue_text</object>
     </objects>
   </objects>
   <rooms name="rooms">
