@@ -17,11 +17,15 @@
       <sprite>sprites\spr_exit</sprite>
     </sprites>
     <sprite>sprites\spr_back_button</sprite>
+    <sprites name="PAUSE MENU">
+      <sprite>sprites\spr_exit_game</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scrpt_prologue_text.gml</script>
+    <script>scripts\scrpt_musics.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_sister_talk</font>
@@ -39,11 +43,15 @@
       <object>objects\obj_load_game</object>
       <object>objects\obj_options</object>
       <object>objects\obj_exit</object>
+      <object>objects\obj_back_button</object>
     </objects>
     <objects name="Text">
       <object>objects\obj_prologue_text</object>
     </objects>
-    <object>objects\obj_back_button</object>
+    <objects name="PAUSE MENU">
+      <object>objects\obj_pause</object>
+      <object>objects\obj_exit_game</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
