@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if mouse_check_button_pressed(mb_left)
+            <string>if keyboard_check_pressed(vk_anykey)
 {
 showtext += 1
 }
@@ -80,15 +80,15 @@ showtext += 1
     draw_set_halign(fa_center);
     draw_set_valign(fa_center);
     draw_set_font(font_1);
-    draw_text(x,y, "Left click with the mouse");
+    draw_text(512,y, "Click any button!");
 }
 else if showtext == 1
 {
     draw_set_color(c_white);
     draw_set_halign(fa_center);
     draw_set_valign(fa_center);
-    draw_set_font(font_1);
-    draw_text(x,y,"Prologue");
+    draw_set_font(font_2);
+    draw_text(512,y,"Prologue");
 }
 else if showtext == 2
 {
@@ -96,7 +96,7 @@ else if showtext == 2
     draw_set_halign(fa_center);
     draw_set_valign(fa_center);
     draw_set_font(font_1);
-    draw_text(x,y,"We write stuff here");
+    draw_text(512,y,"We write stuff here.");
 }
 else if showtext == 3
 {

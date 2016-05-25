@@ -26,8 +26,10 @@
   <fonts name="fonts">
     <font>fonts\font_sister_talk</font>
     <font>fonts\font_1</font>
+    <font>fonts\font_2</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_cursor</object>
     <objects name="Sound">
       <object>objects\obj_bgmusic</object>
     </objects>
@@ -37,7 +39,6 @@
       <object>objects\obj_load_game</object>
       <object>objects\obj_options</object>
       <object>objects\obj_exit</object>
-      <object>objects\obj_cursor</object>
     </objects>
     <objects name="Text">
       <object>objects\obj_prologue_text</object>
