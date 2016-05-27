@@ -31,40 +31,6 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (pause == 1)
-{
-    image_speed = 0;
-    if position_meeting(mouse_x, mouse_y, spr_exit_game)
-    {
-        image_index = 1;
-    }
-    else
-    {  
-        image_index = 0;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -93,11 +59,10 @@
     draw_set_color(c_white);
     draw_set_font(font_1);
     draw_text(x + 360,y + 100, "Paused");
-    draw_set_color(c_black);
+    draw_set_color(c_black);  
     
-    draw_sprite(spr_exit_game, 0, x + 360, y + 150);
-    instance_create(x,y, obj_cursor);
-    
+    instance_create(x, y, obj_cursor);
+    instance_create(x,y, obj_exit_game);
 }
 </string>
           </argument>
@@ -126,6 +91,8 @@
     pause = 1;
     instance_deactivate_all(true);
     //If you want pause animation, create them here
+    instance_activate_object(obj_exit_game);
+    instance_activate_object(obj_cursor);
     
 }
 else
@@ -133,6 +100,8 @@ else
     pause = 0;
     instance_activate_all();
     //deactivate pause animations here
+    instance_deactivate_object(obj_exit_game);
+    instance_deactivate_object(obj_cursor);
 }
 </string>
           </argument>
