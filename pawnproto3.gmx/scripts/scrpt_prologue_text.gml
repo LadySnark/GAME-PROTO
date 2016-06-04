@@ -1,5 +1,5 @@
 //scrpt_prologue_text("text", speed, x, y)
-
+// This script may eventually be used to fade in all text
 text = instance_create(argument2, argument3, obj_prologue_text);
 
 with(text)

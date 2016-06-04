@@ -8,13 +8,17 @@
     <sound>sound\snd_bgmusic</sound>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\spr_cursor</sprite>
     <sprites name="START MENU">
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_new_game</sprite>
       <sprite>sprites\spr_load_game</sprite>
       <sprite>sprites\spr_options</sprite>
       <sprite>sprites\spr_exit</sprite>
-      <sprite>sprites\spr_cursor</sprite>
+    </sprites>
+    <sprite>sprites\spr_back_button</sprite>
+    <sprites name="PAUSE MENU">
+      <sprite>sprites\spr_exit_game</sprite>
     </sprites>
 <<<<<<< HEAD
     <sprite>sprites\spr_ghost</sprite>
@@ -34,12 +38,15 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scrpt_prologue_text.gml</script>
+    <script>scripts\scrpt_musics.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_sister_talk</font>
     <font>fonts\font_1</font>
+    <font>fonts\font_2</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_cursor</object>
     <objects name="Sound">
       <object>objects\obj_bgmusic</object>
     </objects>
@@ -49,10 +56,14 @@
       <object>objects\obj_load_game</object>
       <object>objects\obj_options</object>
       <object>objects\obj_exit</object>
-      <object>objects\obj_cursor</object>
+      <object>objects\obj_back_button</object>
     </objects>
     <objects name="Text">
       <object>objects\obj_prologue_text</object>
+    </objects>
+    <objects name="PAUSE MENU">
+      <object>objects\obj_pause</object>
+      <object>objects\obj_exit_game</object>
     </objects>
   </objects>
   <rooms name="rooms">
