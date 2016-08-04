@@ -20,6 +20,11 @@
     <sprites name="PAUSE MENU">
       <sprite>sprites\spr_exit_game</sprite>
     </sprites>
+    <sprites name="TEST ROOM">
+      <sprite>sprites\spr_ground_0</sprite>
+      <sprite>sprites\spr_ground_1</sprite>
+    </sprites>
+    <sprite>sprites\spr_player</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -51,6 +56,14 @@
     <objects name="PAUSE MENU">
       <object>objects\obj_pause</object>
       <object>objects\obj_exit_game</object>
+    </objects>
+    <object>objects\obj_player</object>
+    <objects name="TEST ROOM">
+      <objects name="GROUND">
+        <object>objects\obj_ground_1</object>
+        <object>objects\obj_ground_2</object>
+        <object>objects\obj_ground_3</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
