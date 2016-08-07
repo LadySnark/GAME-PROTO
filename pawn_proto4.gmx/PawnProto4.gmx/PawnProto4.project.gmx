@@ -24,6 +24,7 @@
       <sprite>sprites\spr_ground_0</sprite>
       <sprite>sprites\spr_ground_1</sprite>
       <sprite>sprites\spr_grass_mask</sprite>
+      <sprite>sprites\spr_lighthouse</sprite>
     </sprites>
     <sprites name="PLAYER">
       <sprite>sprites\spr_player</sprite>
@@ -68,6 +69,7 @@
         <object>objects\obj_ground_1</object>
         <object>objects\obj_grass</object>
       </objects>
+      <object>objects\obj_lighthouse</object>
     </objects>
   </objects>
   <rooms name="rooms">

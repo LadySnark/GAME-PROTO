@@ -65,10 +65,8 @@ if (keyboard_check(vk_up) or keyboard_check(ord("W")) or keyboard_check(vk_space
 
 //Responding to Player Input
 //Look for better way of doing jumping
-while (x &gt; 0) 
-{
-    move = key_left + key_right;
-}
+ move = key_left + key_right;
+
 hspeed = move * movespeed;
 if (vspeed &lt; 10) vspeed += grav;
 if (place_meeting(x,y+1,obj_ground_1))
