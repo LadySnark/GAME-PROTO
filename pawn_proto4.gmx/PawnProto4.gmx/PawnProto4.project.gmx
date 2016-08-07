@@ -23,6 +23,7 @@
     <sprites name="TEST ROOM">
       <sprite>sprites\spr_ground_0</sprite>
       <sprite>sprites\spr_ground_1</sprite>
+      <sprite>sprites\spr_grass_mask</sprite>
     </sprites>
     <sprites name="PLAYER">
       <sprite>sprites\spr_player</sprite>
@@ -61,19 +62,11 @@
     <objects name="Text">
       <object>objects\obj_prologue_text</object>
     </objects>
-    <objects name="PAUSE MENU">
-      <object>objects\obj_pause</object>
-      <object>objects\obj_exit_game</object>
-    </objects>
     <object>objects\obj_player</object>
     <objects name="TEST ROOM">
       <objects name="GROUND">
         <object>objects\obj_ground_1</object>
-        <object>objects\obj_ground_2</object>
-        <object>objects\obj_ground_3</object>
-        <object>objects\obj_ground_4</object>
-        <object>objects\obj_ground_5</object>
-        <object>objects\obj_ground_6</object>
+        <object>objects\obj_grass</object>
       </objects>
     </objects>
   </objects>

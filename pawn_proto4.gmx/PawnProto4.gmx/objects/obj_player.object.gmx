@@ -65,10 +65,13 @@ if (keyboard_check(vk_up) or keyboard_check(ord("W")) or keyboard_check(vk_space
 
 //Responding to Player Input
 //Look for better way of doing jumping
-move = key_left + key_right;
+while (x &gt; 0) 
+{
+    move = key_left + key_right;
+}
 hspeed = move * movespeed;
 if (vspeed &lt; 10) vspeed += grav;
-if (place_meeting(x,y+1,obj_ground_1) or place_meeting(x,y+1,obj_ground_2) or place_meeting(x,y+1,obj_ground_3) or place_meeting(x,y+1,obj_ground_4) or place_meeting(x,y+1,obj_ground_5))
+if (place_meeting(x,y+1,obj_ground_1))
 {
     vspeed = key_jump * -jumpspeed;
 }
@@ -77,10 +80,10 @@ if (vspeed != 0)
     if (hspeed &gt; 3) hspeed = 3;
 }
 //Horizontal Collision
-//for horizontal, we only worry about a few of the ground tiles
-if (place_meeting(x+hspeed, y, obj_ground_1) or place_meeting(x+hspeed,y,obj_ground_5) or place_meeting(x+hspeed,y,obj_ground_6))
+//We can streamline collision by using the same dirt tile ground_1 and a grass mask with depth -1
+if (place_meeting(x+hspeed, y, obj_ground_1)) 
 {
-    while(!place_meeting(x+sign(hspeed),y, obj_ground_1) and !place_meeting(x+sign(hspeed),y, obj_ground_5) and !place_meeting(x+sign(hspeed),y, obj_ground_6))
+    while(!place_meeting(x+sign(hspeed),y, obj_ground_1))
     {
         x += sign(hspeed);
     }
@@ -88,9 +91,9 @@ if (place_meeting(x+hspeed, y, obj_ground_1) or place_meeting(x+hspeed,y,obj_gro
 }
 x += hspeed;
 //Vertical Collision
-if (place_meeting(x,y+vspeed, obj_ground_1) or place_meeting(x,y+vspeed, obj_ground_2) or place_meeting(x,y+vspeed,obj_ground_3) or place_meeting(x,y+vspeed,obj_ground_4) or place_meeting(x,y+vspeed,obj_ground_5) or place_meeting(x,y+vspeed,obj_ground_6))
+if (place_meeting(x,y+vspeed, obj_ground_1))
 {
-    while(!place_meeting(x,y+sign(vspeed),obj_ground_1) and !place_meeting(x,y+sign(vspeed),obj_ground_2) and !place_meeting(x,y+sign(vspeed),obj_ground_3) and !place_meeting(x,y+sign(vspeed),obj_ground_4) and !place_meeting(x,y+sign(vspeed),obj_ground_5) and !place_meeting(x,y+sign(vspeed),obj_ground_6))
+    while(!place_meeting(x,y+sign(vspeed),obj_ground_1))
         {
             y += sign(vspeed);
         }
@@ -100,17 +103,18 @@ if (place_meeting(x,y+vspeed, obj_ground_1) or place_meeting(x,y+vspeed, obj_gro
 //Player Death
 
 //Player Animations
-if (hspeed &gt; 0)
-{
-    sprite_index = spr_walk_r;
-}
-if (hspeed &lt; 0)
-{
-    sprite_index = spr_walk_l;
-}
-if (hspeed == 0) sprite_index = spr_player;
-if (vspeed != 0 and hspeed &lt;= 0) sprite_index = spr_jump_l;
-if (vspeed != 0 and hspeed &gt;= 0) sprite_index = spr_jump_r;
+//
+//if (hspeed &gt; 0)
+//{
+//   sprite_index = spr_walk_r;
+//}
+//if (hspeed &lt; 0)
+//{
+//    sprite_index = spr_walk_l;
+//}
+//if (hspeed == 0) sprite_index = spr_player;
+//if (vspeed != 0 and hspeed &lt;= 0) sprite_index = spr_jump_l;
+//if (vspeed != 0 and hspeed &gt;= 0) sprite_index = spr_jump_r;
 </string>
           </argument>
         </arguments>
