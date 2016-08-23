@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room == rm_test or room == rm_prologue) sound_stop(0);
+            <string>if (room != rm_start) sound_stop(0);
 </string>
           </argument>
         </arguments>

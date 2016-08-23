@@ -5,7 +5,7 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_bgmusic</sound>
+    <sound>sound\sound3</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_cursor</sprite>
@@ -40,18 +40,13 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scrpt_prologue_text.gml</script>
-    <script>scripts\scrpt_musics.gml</script>
   </scripts>
   <fonts name="fonts">
-    <font>fonts\font_sister_talk</font>
     <font>fonts\font_1</font>
     <font>fonts\font_2</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_cursor</object>
-    <objects name="Sound">
-      <object>objects\obj_bgmusic</object>
-    </objects>
     <objects name="START MENU">
       <object>objects\obj_title</object>
       <object>objects\obj_new_game</object>
@@ -72,9 +67,8 @@
       <object>objects\obj_lighthouse</object>
     </objects>
     <objects name="Pause Menu">
-      <object>objects\obj_input</object>
+      <object>objects\obj_pause</object>
     </objects>
-    <object>objects\obj_pause</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
