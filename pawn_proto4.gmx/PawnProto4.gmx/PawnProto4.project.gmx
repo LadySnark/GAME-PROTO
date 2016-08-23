@@ -15,8 +15,8 @@
       <sprite>sprites\spr_load_game</sprite>
       <sprite>sprites\spr_options</sprite>
       <sprite>sprites\spr_exit</sprite>
+      <sprite>sprites\spr_back_button</sprite>
     </sprites>
-    <sprite>sprites\spr_back_button</sprite>
     <sprites name="PAUSE MENU">
       <sprite>sprites\spr_exit_game</sprite>
     </sprites>
@@ -35,7 +35,7 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\bg_test</background>
+    <background>background\background1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -71,6 +71,10 @@
       </objects>
       <object>objects\obj_lighthouse</object>
     </objects>
+    <objects name="Pause Menu">
+      <object>objects\obj_input</object>
+    </objects>
+    <object>objects\obj_pause</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
