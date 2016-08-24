@@ -4,9 +4,7 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound">
-    <sound>sound\sound3</sound>
-  </sounds>
+  <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_cursor</sprite>
     <sprites name="START MENU">
@@ -21,10 +19,13 @@
       <sprite>sprites\spr_exit_game</sprite>
     </sprites>
     <sprites name="TEST ROOM">
-      <sprite>sprites\spr_ground_0</sprite>
       <sprite>sprites\spr_ground_1</sprite>
       <sprite>sprites\spr_grass_mask</sprite>
       <sprite>sprites\spr_lighthouse</sprite>
+      <sprite>sprites\spr_groundbutt_0</sprite>
+      <sprite>sprites\spr_groundbutt_1</sprite>
+      <sprite>sprites\spr_ground_ocean</sprite>
+      <sprite>sprites\spr_grass_mask_butt</sprite>
     </sprites>
     <sprites name="PLAYER">
       <sprite>sprites\spr_player</sprite>
@@ -36,6 +37,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
+    <background>background\background2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -63,6 +65,10 @@
       <objects name="GROUND">
         <object>objects\obj_ground_1</object>
         <object>objects\obj_grass</object>
+        <object>objects\obj_groundbutt_0</object>
+        <object>objects\obj_groundbutt_1</object>
+        <object>objects\obj_ground_ocean</object>
+        <object>objects\obj_grassbutt</object>
       </objects>
       <object>objects\obj_lighthouse</object>
     </objects>

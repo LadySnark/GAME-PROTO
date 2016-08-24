@@ -28,7 +28,7 @@
             <string>///Initialization
 grav = .55;
 jumpspeed = 5;
-movespeed = 4;
+movespeed = 3;
 health = 5;
 hspeed = 0;
 vspeed = 0;
@@ -54,8 +54,9 @@ vspeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Player Input
-key_right = 0;
+            <string>///Player Movement
+//Player Input
+var key_right = 0;
 key_left = 0;
 key_jump = 0;
 
@@ -64,12 +65,16 @@ if (keyboard_check(vk_left) or keyboard_check(ord("A"))) key_left = -1;
 if (keyboard_check(vk_up) or keyboard_check(ord("W")) or keyboard_check(vk_space)) key_jump = 1;
 
 //Responding to Player Input
-//Look for better way of doing jumping
+//Look for better way of doing jumping (i.e. if we can create a class to put all ground in)
  move = key_left + key_right;
 
 hspeed = move * movespeed;
 if (vspeed &lt; 10) vspeed += grav;
 if (place_meeting(x,y+1,obj_ground_1))
+{
+    vspeed = key_jump * -jumpspeed;
+}
+if (place_meeting(x,y+1,obj_groundbutt_0))
 {
     vspeed = key_jump * -jumpspeed;
 }
@@ -97,7 +102,15 @@ if (place_meeting(x,y+vspeed, obj_ground_1))
         }
         vspeed = 0;
     }
-    y += vspeed;
+if (place_meeting(x,y+vspeed, obj_groundbutt_0))
+{
+    while(!place_meeting(x,y+sign(vspeed),obj_groundbutt_0))
+        {
+            y += sign(vspeed);
+        }
+        vspeed = 0;
+    }
+y += vspeed;
 //Player Death
 
 //Player Animations
