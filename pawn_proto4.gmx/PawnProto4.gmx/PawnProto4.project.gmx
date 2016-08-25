@@ -31,8 +31,8 @@
       <sprite>sprites\spr_player</sprite>
       <sprite>sprites\spr_player_left</sprite>
       <sprite>sprites\spr_player_right</sprite>
-      <sprite>sprites\spr_jump_up</sprite>
-      <sprite>sprites\spr_jump_down</sprite>
+      <sprite>sprites\spr_player_jump_up</sprite>
+      <sprite>sprites\spr_player_jump_down</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -69,6 +69,7 @@
         <object>objects\obj_groundbutt_1</object>
         <object>objects\obj_ground_ocean</object>
         <object>objects\obj_grassbutt</object>
+        <object>objects\obj_ground_parent</object>
       </objects>
       <object>objects\obj_lighthouse</object>
     </objects>

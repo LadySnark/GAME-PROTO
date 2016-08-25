@@ -32,35 +32,9 @@ movespeed = 3;
 health = 5;
 hspeed = 0;
 vspeed = 0;
+
+image_speed = 0;
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>541</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sprite_set</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>5</kind>
-            <sprite>spr_player</sprite>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>.5</string>
           </argument>
         </arguments>
       </action>
@@ -88,72 +62,69 @@ var key_right = 0;
 key_left = 0;
 key_jump = 0;
 
-if (keyboard_check(vk_right) or keyboard_check(ord("D"))) key_right = 1;
-if (keyboard_check(vk_left) or keyboard_check(ord("A"))) key_left = -1;
-if (keyboard_check(vk_up) or keyboard_check(ord("W")) or keyboard_check(vk_space)) key_jump = 1;
+if (keyboard_check(vk_right) or keyboard_check(ord("D")))
+{
+    key_right = 1;
+    sprite_index = spr_player_right;
+}
+if (keyboard_check(vk_left) or keyboard_check(ord("A")))
+{
+    key_left = -1;
+    sprite_index = spr_player_left;
+}
+if (keyboard_check(vk_up) or keyboard_check(ord("W")) or keyboard_check(vk_space))
+{
+    key_jump = 1;
+    if (vspeed &lt; 0)
+    {
+        sprite_index = spr_player_jump_up;
+    }
+}
 
 //Responding to Player Input
 //Look for better way of doing jumping (i.e. if we can create a class to put all ground in)
- move = key_left + key_right;
+move = key_left + key_right;
 
 hspeed = move * movespeed;
 if (vspeed &lt; 10) vspeed += grav;
-if (place_meeting(x,y+1,obj_ground_1))
+if (place_meeting(x,y+1,obj_ground_parent))
 {
     vspeed = key_jump * -jumpspeed;
 }
-if (place_meeting(x,y+1,obj_groundbutt_0))
-{
-    vspeed = key_jump * -jumpspeed;
-}
+
 if (vspeed != 0)
 {
-    if (hspeed &gt; 3) hspeed = 3;
+    if (hspeed &gt; 3) 
+    {
+        hspeed = 3;
+    }
+}
+if (vspeed == 0)
+{
+    sprite_index = spr_player;
 }
 //Horizontal Collision
 //We can streamline collision by using the same dirt tile ground_1 and a grass mask with depth -1
-if (place_meeting(x+hspeed, y, obj_ground_1)) 
+if (place_meeting(x+hspeed, y, obj_ground_parent)) 
 {
-    while(!place_meeting(x+sign(hspeed),y, obj_ground_1))
+    while(!place_meeting(x+sign(hspeed),y, obj_ground_parent))
     {
         x += sign(hspeed);
     }
     hspeed = 0;
 }
 x += hspeed;
+
 //Vertical Collision
-if (place_meeting(x,y+vspeed, obj_ground_1))
+if (place_meeting(x,y+vspeed, obj_ground_parent))
 {
-    while(!place_meeting(x,y+sign(vspeed),obj_ground_1))
-        {
-            y += sign(vspeed);
-        }
-        vspeed = 0;
-    }
-if (place_meeting(x,y+vspeed, obj_groundbutt_0))
-{
-    while(!place_meeting(x,y+sign(vspeed),obj_groundbutt_0))
+    while(!place_meeting(x,y+sign(vspeed),obj_ground_parent))
         {
             y += sign(vspeed);
         }
         vspeed = 0;
     }
 y += vspeed;
-//Player Death
-
-//Player Animations
-//
-//if (hspeed &gt; 0)
-//{
-//   sprite_index = spr_walk_r;
-//}
-//if (hspeed &lt; 0)
-//{
-//    sprite_index = spr_walk_l;
-//}
-//if (hspeed == 0) sprite_index = spr_player;
-//if (vspeed != 0 and hspeed &lt;= 0) sprite_index = spr_jump_l;
-//if (vspeed != 0 and hspeed &gt;= 0) sprite_index = spr_jump_r;
 </string>
           </argument>
         </arguments>
@@ -172,9 +143,9 @@ y += vspeed;
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>24,32</point>
-    <point>6,32</point>
-    <point>6,8</point>
-    <point>24,8</point>
+    <point>23.75,32</point>
+    <point>5,32</point>
+    <point>5,8</point>
+    <point>23.75,8</point>
   </PhysicsShapePoints>
 </object>
