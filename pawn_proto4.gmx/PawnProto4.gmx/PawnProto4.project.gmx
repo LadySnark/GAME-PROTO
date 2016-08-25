@@ -29,10 +29,10 @@
     </sprites>
     <sprites name="PLAYER">
       <sprite>sprites\spr_player</sprite>
-      <sprite>sprites\spr_walk_l</sprite>
-      <sprite>sprites\spr_walk_r</sprite>
-      <sprite>sprites\spr_jump_l</sprite>
-      <sprite>sprites\spr_jump_r</sprite>
+      <sprite>sprites\spr_player_left</sprite>
+      <sprite>sprites\spr_player_right</sprite>
+      <sprite>sprites\spr_jump_up</sprite>
+      <sprite>sprites\spr_jump_down</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
