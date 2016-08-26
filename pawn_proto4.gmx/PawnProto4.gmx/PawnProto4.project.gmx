@@ -26,6 +26,7 @@
       <sprite>sprites\spr_groundbutt_1</sprite>
       <sprite>sprites\spr_ground_ocean</sprite>
       <sprite>sprites\spr_grass_mask_butt</sprite>
+      <sprite>sprites\spr_house</sprite>
     </sprites>
     <sprites name="PLAYER">
       <sprite>sprites\spr_player</sprite>
@@ -33,6 +34,8 @@
       <sprite>sprites\spr_player_right</sprite>
       <sprite>sprites\spr_player_jump_up</sprite>
       <sprite>sprites\spr_player_jump_down</sprite>
+      <sprite>sprites\spr_player_jump_left</sprite>
+      <sprite>sprites\spr_player_jump_right</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -72,6 +75,7 @@
         <object>objects\obj_ground_parent</object>
       </objects>
       <object>objects\obj_lighthouse</object>
+      <object>objects\obj_house</object>
     </objects>
     <objects name="Pause Menu">
       <object>objects\obj_pause</object>

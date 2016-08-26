@@ -110,6 +110,7 @@
     <instance objName="obj_ground_ocean" x="150" y="392" name="inst_0F4EDF91" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_1" x="150" y="360" name="inst_67C486EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grassbutt" x="150" y="328" name="inst_E224DE70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_house" x="343" y="280" name="inst_BC99CAAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

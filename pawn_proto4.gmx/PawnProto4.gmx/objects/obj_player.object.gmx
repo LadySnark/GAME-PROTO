@@ -59,31 +59,34 @@ image_speed = 0;
             <string>///Player Movement
 //Player Input
 var key_right = 0;
-key_left = 0;
-key_jump = 0;
+var key_left = 0;
+var key_jump = 0;
 
 if (keyboard_check(vk_right) or keyboard_check(ord("D")))
 {
     key_right = 1;
-    sprite_index = spr_player_right;
+    if (place_meeting(x,y+1,obj_ground_parent))
+    {
+        sprite_index = spr_player_right;
+        image_speed = .18;
+    }
 }
 if (keyboard_check(vk_left) or keyboard_check(ord("A")))
 {
-    key_left = -1;
-    sprite_index = spr_player_left;
+    key_left = 1;
+    if (place_meeting(x,y+1,obj_ground_parent))
+    {
+        sprite_index = spr_player_left;
+        image_speed = .18;
+    }
 }
-if (keyboard_check(vk_up) or keyboard_check(ord("W")) or keyboard_check(vk_space))
+if (keyboard_check(vk_space))
 {
     key_jump = 1;
-    if (vspeed &lt; 0)
-    {
-        sprite_index = spr_player_jump_up;
-    }
 }
 
 //Responding to Player Input
-//Look for better way of doing jumping (i.e. if we can create a class to put all ground in)
-move = key_left + key_right;
+move = -key_left + key_right;
 
 hspeed = move * movespeed;
 if (vspeed &lt; 10) vspeed += grav;
@@ -99,12 +102,9 @@ if (vspeed != 0)
         hspeed = 3;
     }
 }
-if (vspeed == 0)
-{
-    sprite_index = spr_player;
-}
+
 //Horizontal Collision
-//We can streamline collision by using the same dirt tile ground_1 and a grass mask with depth -1
+//With the use of parent objects, using a grass mask becomes kind of redundant
 if (place_meeting(x+hspeed, y, obj_ground_parent)) 
 {
     while(!place_meeting(x+sign(hspeed),y, obj_ground_parent))
@@ -114,8 +114,8 @@ if (place_meeting(x+hspeed, y, obj_ground_parent))
     hspeed = 0;
 }
 x += hspeed;
-
 //Vertical Collision
+//Right now, we have an issue of sometimes landing 1 px above the ground and getting temporarily stuck
 if (place_meeting(x,y+vspeed, obj_ground_parent))
 {
     while(!place_meeting(x,y+sign(vspeed),obj_ground_parent))
@@ -124,7 +124,48 @@ if (place_meeting(x,y+vspeed, obj_ground_parent))
         }
         vspeed = 0;
     }
+
 y += vspeed;
+
+//Jump Animation
+if (key_jump)
+{
+    if (key_left)
+    {
+        sprite_index = spr_player_jump_left;
+//        show_message("left") this message shows up but the left jump anim doesn't play :&lt;
+    }
+
+    if (key_right)
+    {
+        sprite_index = spr_player_jump_right;
+        //jump right animation seems fine
+    }
+    else
+    {
+        sprite_index = spr_player_jump_up;
+    }
+}
+if (key_left)
+{
+    if (key_jump)
+    {
+        sprite_index = spr_player_jump_left;
+    }
+}
+if (key_right)
+{
+    if (key_jump)
+    {
+        sprite_index = spr_player_jump_right;
+    }
+}
+//Stop Animation
+if (vspeed == 0 and hspeed == 0)
+{
+    sprite_index = spr_player;
+}
+//Next: a fall animation
 </string>
           </argument>
         </arguments>
@@ -143,9 +184,9 @@ y += vspeed;
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>23.75,32</point>
-    <point>5,32</point>
-    <point>5,8</point>
-    <point>23.75,8</point>
+    <point>0,0</point>
+    <point>32,0</point>
+    <point>32,32</point>
+    <point>0,32</point>
   </PhysicsShapePoints>
 </object>
