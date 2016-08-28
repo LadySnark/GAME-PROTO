@@ -29,6 +29,7 @@
 grav = .55;
 jumpspeed = 5;
 movespeed = 3;
+
 health = 5;
 hspeed = 0;
 vspeed = 0;
@@ -58,32 +59,28 @@ image_speed = 0;
             <kind>1</kind>
             <string>///Player Movement
 //Player Input
-var key_right = 0;
-var key_left = 0;
-var key_jump = 0;
 
-if (keyboard_check(vk_right) or keyboard_check(ord("D")))
+key_right = keyboard_check(vk_right);
+key_left = keyboard_check(vk_left);
+key_jump = keyboard_check(vk_space);
+
+if (key_right)
 {
-    key_right = 1;
     if (place_meeting(x,y+1,obj_ground_parent))
     {
         sprite_index = spr_player_right;
         image_speed = .18;
     }
 }
-if (keyboard_check(vk_left) or keyboard_check(ord("A")))
+if (key_left)
 {
-    key_left = 1;
     if (place_meeting(x,y+1,obj_ground_parent))
     {
         sprite_index = spr_player_left;
         image_speed = .18;
     }
 }
-if (keyboard_check(vk_space))
-{
-    key_jump = 1;
-}
+
 
 //Responding to Player Input
 move = -key_left + key_right;
