@@ -27,6 +27,10 @@
       <sprite>sprites\spr_ground_ocean</sprite>
       <sprite>sprites\spr_grass_mask_butt</sprite>
       <sprite>sprites\spr_house</sprite>
+      <sprite>sprites\spr_grass_0</sprite>
+      <sprite>sprites\spr_ground_bridge_left</sprite>
+      <sprite>sprites\spr_ground_bridge_right</sprite>
+      <sprite>sprites\spr_bridge_left_corner</sprite>
     </sprites>
     <sprites name="PLAYER">
       <sprite>sprites\spr_player</sprite>
@@ -74,6 +78,10 @@
         <object>objects\obj_ground_ocean</object>
         <object>objects\obj_grassbutt</object>
         <object>objects\obj_ground_parent</object>
+        <object>objects\obj_ground_0</object>
+        <object>objects\obj_ground_bridge_left</object>
+        <object>objects\obj_ground_bridge_right</object>
+        <object>objects\obj_ground_bridge_left_corner</object>
       </objects>
       <object>objects\obj_lighthouse</object>
       <object>objects\obj_house</object>
